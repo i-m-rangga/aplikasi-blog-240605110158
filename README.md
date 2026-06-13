@@ -1,79 +1,265 @@
-# Nusantara News — CMS Blog
+<div align="center">
 
-> Proyek UAS Web Programming | Laravel 11
+<!-- Header Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2C3E50,100:27AE60&height=220&section=header&text=Nusantara%20News&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Content%20Management%20System%20%E2%80%94%20Blog&descSize=18&descAlignY=55&descColor=ffffff" width="100%"/>
+
+<!-- Badges -->
+<p>
+  <img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 11"/>
+  <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.2+"/>
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5"/>
+  <img src="https://img.shields.io/badge/MySQL-8.x-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Status-Completed-27AE60?style=flat-square" alt="Status"/>
+  <img src="https://img.shields.io/badge/License-Academic-2C3E50?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/github/last-commit/i-m-rangga/aplikasi-blog-240605110158?style=flat-square&color=27AE60" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/repo-size/i-m-rangga/aplikasi-blog-240605110158?style=flat-square&color=2C3E50" alt="Repo Size"/>
+</p>
+
+<p><i>Aplikasi CMS Blog berbasis Laravel 11 — Tugas UAS Web Programming</i></p>
+
+<a href="https://github.com/i-m-rangga/aplikasi-blog-240605110158">
+  <img src="https://img.shields.io/badge/🔗_Repository-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+</a>
+
+</div>
 
 ---
 
-## 👤 Identitas Mahasiswa
-
-| Keterangan   | Isi                        |
-|--------------|----------------------------|
-| **Nama Lengkap** | `[NAMA LENGKAP ANDA]`  |
-| **NIM**          | `[NIM ANDA]`           |
-| **Mata Kuliah**  | Web Programming            |
-| **Semester**     | Genap 2024/2025            |
+<!-- Identitas -->
+<table align="center">
+  <tr>
+    <td align="center" width="100">👤</td>
+    <td>
+      <strong>Nama Lengkap</strong><br/>
+      Dika Muhammad Iqbal Marangga
+    </td>
+    <td align="center" width="100">🎓</td>
+    <td>
+      <strong>NIM</strong><br/>
+      240605110158
+    </td>
+  </tr>
+  <tr>
+    <td align="center">📚</td>
+    <td>
+      <strong>Mata Kuliah</strong><br/>
+      Web Programming
+    </td>
+    <td align="center">📅</td>
+    <td>
+      <strong>Semester</strong><br/>
+      Genap 2024/2025
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 📝 Deskripsi Aplikasi
+## 📋 Deskripsi Aplikasi
 
-**Nusantara News** adalah aplikasi *Content Management System* (CMS) Blog berbasis **Laravel 11** yang dibangun sebagai tugas akhir (UAS) mata kuliah Web Programming.
+<blockquote>
+<strong>Nusantara News</strong> adalah aplikasi <em>Content Management System</em> (CMS) Blog full-stack yang dibangun menggunakan <strong>Laravel 11</strong> dan <strong>Bootstrap 5</strong>. Aplikasi ini dirancang sebagai proyek tugas akhir (UAS) mata kuliah Web Programming, mencakup fitur CRUD lengkap untuk pengelolaan konten blog, autentikasi admin, serta halaman publik yang responsif dan elegan.
+</blockquote>
 
-Aplikasi ini terdiri dari dua bagian utama:
+<br/>
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="50%">
 
 ### 🔐 Panel Admin (Back-End)
-Halaman khusus untuk penulis/administrator yang telah login. Fitur yang tersedia:
-- **Autentikasi** — Login & logout menggunakan tabel `penulis` dengan kolom `user_name`.
-- **Kelola Artikel** — CRUD artikel lengkap dengan upload gambar *cover*.
-- **Kelola Kategori** — CRUD kategori artikel.
-- **Kelola Penulis** — CRUD data penulis lengkap dengan upload foto profil.
+Halaman khusus penulis/administrator<br/>yang dilindungi middleware `auth`
+
+</td>
+<td align="center" width="50%">
 
 ### 🌐 Halaman Publik (Front-End)
-Halaman yang dapat diakses siapa saja tanpa perlu login. Fitur yang tersedia:
-- **Beranda** — Menampilkan 5 artikel terbaru dengan cuplikan isi.
-- **Filter Kategori** — Klik kategori di sidebar untuk menyaring artikel.
-- **Detail Artikel** — Membaca artikel secara lengkap.
-- **Artikel Terkait** — Sidebar menampilkan artikel lain dari kategori yang sama.
+Halaman untuk pengunjung umum<br/>tanpa perlu autentikasi
+
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Login & Logout (`tabel penulis`)
+- ✅ Dashboard Admin
+- ✅ CRUD Artikel + upload gambar cover
+- ✅ CRUD Kategori Artikel
+- ✅ CRUD Penulis + upload foto profil
+
+</td>
+<td>
+
+- ✅ Beranda — 5 artikel terbaru
+- ✅ Filter artikel berdasarkan kategori
+- ✅ Detail artikel lengkap
+- ✅ Sidebar artikel terkait (5 maks)
+- ✅ Widget daftar kategori
+
+</td>
+</tr>
+</table>
+</div>
+
+---
+
+## 🏗️ Arsitektur Proyek
+
+```
+aplikasi-blog-240605110158/
+│
+├── 📂 app/
+│   ├── 📂 Http/Controllers/
+│   │   ├── 📄 PublicController.php         ← Controller publik (beranda & detail)
+│   │   ├── 📄 ArtikelController.php        ← CRUD artikel (admin)
+│   │   ├── 📄 PenulisController.php        ← CRUD penulis (admin)
+│   │   ├── 📄 KategoriArtikelController.php ← CRUD kategori (admin)
+│   │   ├── 📄 LoginController.php          ← Autentikasi login/logout
+│   │   └── 📄 DashboardController.php      ← Dashboard admin
+│   │
+│   └── 📂 Models/
+│       ├── 📄 Artikel.php          → belongsTo Penulis, KategoriArtikel
+│       ├── 📄 KategoriArtikel.php  → hasMany Artikel
+│       └── 📄 Penulis.php          → hasMany Artikel
+│
+├── 📂 resources/views/
+│   ├── 📂 layouts/
+│   │   ├── 📄 app.blade.php           ← Layout admin (sidebar + auth)
+│   │   └── 📄 public.blade.php        ← Layout publik (navbar + footer)
+│   ├── 📂 public/
+│   │   ├── 📄 beranda.blade.php       ← Halaman beranda publik
+│   │   └── 📄 detail.blade.php        ← Halaman detail artikel
+│   ├── 📂 artikel/                    ← Views CRUD artikel (admin)
+│   ├── 📂 penulis/                    ← Views CRUD penulis (admin)
+│   ├── 📂 kategori/                   ← Views CRUD kategori (admin)
+│   ├── 📂 login/                      ← Halaman login
+│   └── 📂 dashboard/                  ← Halaman dashboard
+│
+├── 📂 routes/
+│   └── 📄 web.php                     ← Routing admin (auth) & publik
+│
+├── 📂 storage/app/public/
+│   ├── 📂 gambar/                     ← Cover artikel
+│   └── 📂 foto/                       ← Foto profil penulis
+│
+└── 📂 database/migrations/            ← Skema tabel database
+```
 
 ---
 
 ## 🗄️ Struktur Database
 
-| Tabel              | Kolom Utama                                                              |
-|--------------------|--------------------------------------------------------------------------|
-| `penulis`          | `id`, `nama_depan`, `nama_belakang`, `user_name`, `password`, `foto`    |
-| `kategori_artikel` | `id`, `nama_kategori`, `keterangan`                                     |
-| `artikel`          | `id`, `id_penulis`, `id_kategori`, `judul`, `isi`, `gambar`, `hari_tanggal` |
+<div align="center">
+
+```mermaid
+erDiagram
+    PENULIS ||--o{ ARTIKEL : "menulis"
+    KATEGORI_ARTIKEL ||--o{ ARTIKEL : "memiliki"
+
+    PENULIS {
+        int id PK
+        varchar nama_depan
+        varchar nama_belakang
+        varchar user_name UK
+        varchar password
+        varchar foto
+    }
+
+    KATEGORI_ARTIKEL {
+        int id PK
+        varchar nama_kategori
+        text keterangan
+    }
+
+    ARTIKEL {
+        int id PK
+        int id_penulis FK
+        int id_kategori FK
+        varchar judul
+        text isi
+        varchar gambar
+        date hari_tanggal
+    }
+```
+
+</div>
+
+<details>
+<summary><strong>📊 Klik untuk melihat tabel ringkasan</strong></summary>
+<br/>
+
+| Tabel | Kolom | Relasi |
+|:------|:------|:-------|
+| `penulis` | `id` · `nama_depan` · `nama_belakang` · `user_name` · `password` · `foto` | `hasMany` → Artikel |
+| `kategori_artikel` | `id` · `nama_kategori` · `keterangan` | `hasMany` → Artikel |
+| `artikel` | `id` · `id_penulis` · `id_kategori` · `judul` · `isi` · `gambar` · `hari_tanggal` | `belongsTo` → Penulis, KategoriArtikel |
+
+</details>
 
 ---
 
-## 🚀 Langkah Menjalankan Aplikasi Secara Lokal
+## 🗺️ Route Map
 
-### Prasyarat
-Pastikan komputer Anda sudah terinstal:
-- PHP >= 8.2
-- Composer
-- MySQL
-- (Opsional) XAMPP / Laragon
+<div align="center">
 
-### 1. Clone Repositori
+| Method | URI | Controller | Middleware | Keterangan |
+|:------:|:-----|:-----------|:----------:|:-----------|
+| `GET` | `/` | `PublicController@beranda` | — | 🌐 Beranda publik |
+| `GET` | `/artikel/{id}` | `PublicController@detail` | — | 🌐 Detail artikel |
+| `GET` | `/login` | `LoginController@index` | `guest` | 🔑 Form login |
+| `POST` | `/login` | `LoginController@proses` | `guest` | 🔑 Proses login |
+| `POST` | `/logout` | `LoginController@logout` | `auth` | 🔒 Logout |
+| `GET` | `/dashboard` | `DashboardController@index` | `auth` | 🔒 Dashboard |
+| `*` | `/artikel/*` | `ArtikelController` (resource) | `auth` | 🔒 CRUD Artikel |
+| `*` | `/penulis/*` | `PenulisController` (resource) | `auth` | 🔒 CRUD Penulis |
+| `*` | `/kategori/*` | `KategoriArtikelController` (resource) | `auth` | 🔒 CRUD Kategori |
+
+</div>
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi
+
+<details open>
+<summary><strong>📋 Prasyarat</strong></summary>
+<br/>
+
+| Software | Versi Minimum | Keterangan |
+|:---------|:-------------|:-----------|
+| PHP | `>= 8.2` | Runtime utama |
+| Composer | Latest | Dependency manager PHP |
+| MySQL | `>= 8.0` | Database server |
+| XAMPP / Laragon | *(opsional)* | Alternatif all-in-one |
+
+</details>
+
+<br/>
+
+### 📥 Langkah 1 — Clone Repositori
+
 ```bash
-git clone https://github.com/rahmatrafii/web-programming-modul-10.git
-cd web-programming-modul-10
+git clone https://github.com/i-m-rangga/aplikasi-blog-240605110158.git
+cd aplikasi-blog-240605110158
 ```
 
-### 2. Install Dependensi PHP
+### 📦 Langkah 2 — Install Dependensi
+
 ```bash
 composer install
 ```
 
-### 3. Salin File Konfigurasi Environment
+### ⚙️ Langkah 3 — Konfigurasi Environment
+
 ```bash
 cp .env.example .env
 ```
 
-### 4. Konfigurasi Database
-Buka file `.env` dan sesuaikan pengaturan berikut:
+Edit file `.env`, sesuaikan konfigurasi database:
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -83,102 +269,173 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 5. Generate Application Key
+### 🔑 Langkah 4 — Generate Application Key
+
 ```bash
 php artisan key:generate
 ```
 
-### 6. Buat Database
-Buat database baru bernama `db_blog` di MySQL/phpMyAdmin, lalu jalankan migrasi:
+### 🗄️ Langkah 5 — Siapkan Database
+
+Buat database `db_blog` di MySQL/phpMyAdmin, lalu jalankan migrasi:
+
 ```bash
 php artisan migrate
 ```
 
-### 7. Buat Symbolic Link Storage
-Agar gambar artikel dan foto penulis dapat diakses publik:
+### 🔗 Langkah 6 — Buat Storage Symlink
+
 ```bash
 php artisan storage:link
 ```
 
-### 8. (Opsional) Isi Data Awal
-Jika ingin langsung mencoba dengan data contoh, gunakan Tinker:
-```bash
-php artisan tinker
-```
+> Perintah ini menghubungkan folder `storage/app/public` ke `public/storage` agar gambar cover artikel dan foto penulis bisa diakses melalui browser.
 
-### 9. Jalankan Server Lokal
+### 🖥️ Langkah 7 — Jalankan Server
+
 ```bash
 php artisan serve
 ```
 
-Aplikasi dapat diakses di: **http://127.0.0.1:8000**
+<div align="center">
 
-| URL              | Keterangan              |
-|------------------|-------------------------|
-| `/`              | Halaman beranda publik  |
-| `/artikel/{id}`  | Halaman detail artikel  |
-| `/login`         | Login panel admin       |
-| `/dashboard`     | Dashboard admin         |
+### 🎉 Aplikasi siap diakses!
 
-### Akun Default Admin
-Setelah seeder dijalankan, gunakan akun berikut untuk login:
+| URL | Keterangan |
+|:----|:-----------|
+| [`http://127.0.0.1:8000`](http://127.0.0.1:8000) | 🌐 Halaman Beranda Publik |
+| [`http://127.0.0.1:8000/login`](http://127.0.0.1:8000/login) | 🔑 Halaman Login Admin |
+| [`http://127.0.0.1:8000/dashboard`](http://127.0.0.1:8000/dashboard) | 🔒 Dashboard Admin |
 
-| Username | Password   |
-|----------|------------|
-| `iqbal`  | `12345678` |
+</div>
+
+### 🔐 Akun Demo Admin
+
+<div align="center">
+
+| Username | Password |
+|:--------:|:--------:|
+| `iqbal` | `12345678` |
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg" width="48" height="48" alt="Laravel"/>
+  <br/><strong>Laravel 11</strong>
+  <br/><sub>Back-End Framework</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" width="48" height="48" alt="PHP"/>
+  <br/><strong>PHP 8.2+</strong>
+  <br/><sub>Server Runtime</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" width="48" height="48" alt="MySQL"/>
+  <br/><strong>MySQL 8.x</strong>
+  <br/><sub>Database</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" width="48" height="48" alt="Bootstrap"/>
+  <br/><strong>Bootstrap 5.3</strong>
+  <br/><sub>CSS Framework</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5"/>
+  <br/><strong>Blade</strong>
+  <br/><sub>Template Engine</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3"/>
+  <br/><strong>Custom CSS</strong>
+  <br/><sub>Styling</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript"/>
+  <br/><strong>JavaScript</strong>
+  <br/><sub>Interaktivitas</sub>
+</td>
+<td align="center" width="140">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/composer/composer-original.svg" width="48" height="48" alt="Composer"/>
+  <br/><strong>Composer</strong>
+  <br/><sub>Package Manager</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## ✨ Fitur Utama
+
+<div align="center">
+<table>
+<tr>
+<td width="50%">
+
+### 🌐 Halaman Publik
+- 📰 **Beranda** — 5 artikel terbaru dengan card
+- 🏷️ **Filter Kategori** — Klik sidebar untuk filter
+- 📖 **Detail Artikel** — Tampilan lengkap + foto penulis
+- 🔗 **Artikel Terkait** — 5 artikel dari kategori sama
+- 📱 **Responsive** — Tampilan optimal di semua perangkat
+- 🎨 **Desain Elegan** — Google Fonts + Bootstrap Icons
+
+</td>
+<td width="50%">
+
+### 🔒 Panel Admin
+- 🔑 **Autentikasi** — Custom auth dengan tabel `penulis`
+- 📊 **Dashboard** — Ringkasan informasi
+- ✍️ **Kelola Artikel** — CRUD + upload gambar cover
+- 📁 **Kelola Kategori** — CRUD kategori artikel
+- 👥 **Kelola Penulis** — CRUD + upload foto profil
+- 🗂️ **Laravel Storage** — Manajemen file terorganisir
+
+</td>
+</tr>
+</table>
+</div>
 
 ---
 
 ## 🎥 Video Demonstrasi
 
-> Tonton demo lengkap aplikasi di YouTube:
+<div align="center">
 
-**[🔗 Klik di sini untuk menonton video demonstrasi](https://youtu.be/LINK_VIDEO_YOUTUBE_ANDA)**
+> 📺 **Tonton demo lengkap aplikasi Nusantara News di YouTube:**
 
-> ⚠️ *Ganti `LINK_VIDEO_YOUTUBE_ANDA` dengan URL video YouTube Anda.*
+<a href="https://youtu.be/LINK_VIDEO_YOUTUBE_ANDA">
+  <img src="https://img.shields.io/badge/▶_Tonton_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Demo" height="40"/>
+</a>
 
----
+<br/><br/>
 
-## 🛠️ Teknologi yang Digunakan
+> ⚠️ *Ganti `LINK_VIDEO_YOUTUBE_ANDA` pada link di atas dengan URL video YouTube Anda.*
 
-| Teknologi       | Versi / Keterangan         |
-|-----------------|----------------------------|
-| Laravel         | 11.x                       |
-| PHP             | 8.2+                       |
-| MySQL           | 8.x                        |
-| Bootstrap       | 5.3 (via CDN)              |
-| Bootstrap Icons | 1.11 (via CDN)             |
-| Google Fonts    | Inter, Playfair Display    |
-| Laravel Storage | Untuk manajemen file gambar |
+</div>
 
 ---
 
-## 📁 Struktur Direktori Penting
+<div align="center">
 
-```
-web-programming-modul-10/
-├── app/
-│   ├── Http/Controllers/
-│   │   ├── PublicController.php       ← Controller halaman publik (baru)
-│   │   ├── ArtikelController.php      ← CRUD artikel (admin)
-│   │   ├── PenulisController.php      ← CRUD penulis (admin)
-│   │   ├── KategoriArtikelController.php
-│   │   └── LoginController.php
-│   └── Models/
-│       ├── Artikel.php
-│       ├── KategoriArtikel.php
-│       └── Penulis.php
-├── resources/views/
-│   ├── layouts/
-│   │   ├── app.blade.php             ← Layout admin
-│   │   └── public.blade.php          ← Layout publik (baru)
-│   └── public/
-│       ├── beranda.blade.php          ← Halaman beranda publik (baru)
-│       └── detail.blade.php           ← Halaman detail artikel publik (baru)
-└── routes/
-    └── web.php
-```
+<!-- Footer -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:27AE60,100:2C3E50&height=120&section=footer" width="100%"/>
 
----
+<p>
+  Dibuat dengan ❤️ oleh <strong>Dika Muhammad Iqbal Marangga</strong> — <strong>240605110158</strong>
+  <br/>
+  <sub>Web Programming • Genap 2024/2025 • Laravel 11 + Bootstrap 5</sub>
+</p>
 
-*Dibuat dengan ❤️ menggunakan Laravel 11 & Bootstrap 5*
+</div>
