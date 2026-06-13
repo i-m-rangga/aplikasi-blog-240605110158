@@ -51,7 +51,7 @@
     <td align="center">📅</td>
     <td>
       <strong>Semester</strong><br/>
-      Genap 2024/2025
+      Genap 2025/2026
     </td>
   </tr>
 </table>
@@ -309,15 +309,6 @@ php artisan serve
 
 </div>
 
-### 🔐 Akun Demo Admin
-
-<div align="center">
-
-| Username | Password |
-|:--------:|:--------:|
-| `iqbal` | `12345678` |
-
-</div>
 
 ---
 
