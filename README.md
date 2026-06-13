@@ -406,14 +406,11 @@ php artisan serve
 
 > 📺 **Tonton demo lengkap aplikasi Nusantara News di YouTube:**
 
-<a href="https://youtu.be/LINK_VIDEO_YOUTUBE_ANDA">
+<a href="https://youtu.be/EcqmzGkXh3k">
   <img src="https://img.shields.io/badge/▶_Tonton_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Demo" height="40"/>
 </a>
 
 <br/><br/>
-
-> ⚠️ *Ganti `LINK_VIDEO_YOUTUBE_ANDA` pada link di atas dengan URL video YouTube Anda.*
-
 </div>
 
 ---
