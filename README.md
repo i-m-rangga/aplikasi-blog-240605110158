@@ -1,59 +1,184 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Nusantara News — CMS Blog
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Proyek UAS Web Programming | Laravel 11
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 👤 Identitas Mahasiswa
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Keterangan   | Isi                        |
+|--------------|----------------------------|
+| **Nama Lengkap** | `[NAMA LENGKAP ANDA]`  |
+| **NIM**          | `[NIM ANDA]`           |
+| **Mata Kuliah**  | Web Programming            |
+| **Semester**     | Genap 2024/2025            |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📝 Deskripsi Aplikasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+**Nusantara News** adalah aplikasi *Content Management System* (CMS) Blog berbasis **Laravel 11** yang dibangun sebagai tugas akhir (UAS) mata kuliah Web Programming.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Aplikasi ini terdiri dari dua bagian utama:
 
-## Laravel Sponsors
+### 🔐 Panel Admin (Back-End)
+Halaman khusus untuk penulis/administrator yang telah login. Fitur yang tersedia:
+- **Autentikasi** — Login & logout menggunakan tabel `penulis` dengan kolom `user_name`.
+- **Kelola Artikel** — CRUD artikel lengkap dengan upload gambar *cover*.
+- **Kelola Kategori** — CRUD kategori artikel.
+- **Kelola Penulis** — CRUD data penulis lengkap dengan upload foto profil.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🌐 Halaman Publik (Front-End)
+Halaman yang dapat diakses siapa saja tanpa perlu login. Fitur yang tersedia:
+- **Beranda** — Menampilkan 5 artikel terbaru dengan cuplikan isi.
+- **Filter Kategori** — Klik kategori di sidebar untuk menyaring artikel.
+- **Detail Artikel** — Membaca artikel secara lengkap.
+- **Artikel Terkait** — Sidebar menampilkan artikel lain dari kategori yang sama.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🗄️ Struktur Database
 
-## Contributing
+| Tabel              | Kolom Utama                                                              |
+|--------------------|--------------------------------------------------------------------------|
+| `penulis`          | `id`, `nama_depan`, `nama_belakang`, `user_name`, `password`, `foto`    |
+| `kategori_artikel` | `id`, `nama_kategori`, `keterangan`                                     |
+| `artikel`          | `id`, `id_penulis`, `id_kategori`, `judul`, `isi`, `gambar`, `hari_tanggal` |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🚀 Langkah Menjalankan Aplikasi Secara Lokal
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Prasyarat
+Pastikan komputer Anda sudah terinstal:
+- PHP >= 8.2
+- Composer
+- MySQL
+- (Opsional) XAMPP / Laragon
 
-## Security Vulnerabilities
+### 1. Clone Repositori
+```bash
+git clone https://github.com/rahmatrafii/web-programming-modul-10.git
+cd web-programming-modul-10
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. Install Dependensi PHP
+```bash
+composer install
+```
 
-## License
+### 3. Salin File Konfigurasi Environment
+```bash
+cp .env.example .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 4. Konfigurasi Database
+Buka file `.env` dan sesuaikan pengaturan berikut:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_blog
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 5. Generate Application Key
+```bash
+php artisan key:generate
+```
+
+### 6. Buat Database
+Buat database baru bernama `db_blog` di MySQL/phpMyAdmin, lalu jalankan migrasi:
+```bash
+php artisan migrate
+```
+
+### 7. Buat Symbolic Link Storage
+Agar gambar artikel dan foto penulis dapat diakses publik:
+```bash
+php artisan storage:link
+```
+
+### 8. (Opsional) Isi Data Awal
+Jika ingin langsung mencoba dengan data contoh, gunakan Tinker:
+```bash
+php artisan tinker
+```
+
+### 9. Jalankan Server Lokal
+```bash
+php artisan serve
+```
+
+Aplikasi dapat diakses di: **http://127.0.0.1:8000**
+
+| URL              | Keterangan              |
+|------------------|-------------------------|
+| `/`              | Halaman beranda publik  |
+| `/artikel/{id}`  | Halaman detail artikel  |
+| `/login`         | Login panel admin       |
+| `/dashboard`     | Dashboard admin         |
+
+### Akun Default Admin
+Setelah seeder dijalankan, gunakan akun berikut untuk login:
+
+| Username | Password   |
+|----------|------------|
+| `iqbal`  | `12345678` |
+
+---
+
+## 🎥 Video Demonstrasi
+
+> Tonton demo lengkap aplikasi di YouTube:
+
+**[🔗 Klik di sini untuk menonton video demonstrasi](https://youtu.be/LINK_VIDEO_YOUTUBE_ANDA)**
+
+> ⚠️ *Ganti `LINK_VIDEO_YOUTUBE_ANDA` dengan URL video YouTube Anda.*
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Teknologi       | Versi / Keterangan         |
+|-----------------|----------------------------|
+| Laravel         | 11.x                       |
+| PHP             | 8.2+                       |
+| MySQL           | 8.x                        |
+| Bootstrap       | 5.3 (via CDN)              |
+| Bootstrap Icons | 1.11 (via CDN)             |
+| Google Fonts    | Inter, Playfair Display    |
+| Laravel Storage | Untuk manajemen file gambar |
+
+---
+
+## 📁 Struktur Direktori Penting
+
+```
+web-programming-modul-10/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── PublicController.php       ← Controller halaman publik (baru)
+│   │   ├── ArtikelController.php      ← CRUD artikel (admin)
+│   │   ├── PenulisController.php      ← CRUD penulis (admin)
+│   │   ├── KategoriArtikelController.php
+│   │   └── LoginController.php
+│   └── Models/
+│       ├── Artikel.php
+│       ├── KategoriArtikel.php
+│       └── Penulis.php
+├── resources/views/
+│   ├── layouts/
+│   │   ├── app.blade.php             ← Layout admin
+│   │   └── public.blade.php          ← Layout publik (baru)
+│   └── public/
+│       ├── beranda.blade.php          ← Halaman beranda publik (baru)
+│       └── detail.blade.php           ← Halaman detail artikel publik (baru)
+└── routes/
+    └── web.php
+```
+
+---
+
+*Dibuat dengan ❤️ menggunakan Laravel 11 & Bootstrap 5*
