@@ -410,7 +410,6 @@ php artisan serve
   <img src="https://img.shields.io/badge/▶_Tonton_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Demo" height="40"/>
 </a>
 
-<br/><br/>
 </div>
 
 ---
@@ -421,7 +420,7 @@ php artisan serve
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:27AE60,100:2C3E50&height=120&section=footer" width="100%"/>
 
 <p>
-  Dibuat dengan ❤️ oleh <strong>Dika Muhammad Iqbal Marangga</strong> — <strong>240605110158</strong>
+  Dibuat oleh <strong>Dika Muhammad Iqbal Marangga</strong> — <strong>240605110158</strong>
   <br/>
   <sub>Web Programming • Genap 2024/2025 • Laravel 11 + Bootstrap 5</sub>
 </p>
